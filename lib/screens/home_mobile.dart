@@ -37,7 +37,7 @@ class HomeMobileScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text('Our team',
+                    Text('People',
                         style: TextStyle(color: Colors.black,fontSize: 12,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 1,)),

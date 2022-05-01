@@ -29,7 +29,7 @@ class HomeLargeScreen extends StatelessWidget {
                     child: IntrinsicHeight(
                       child: Row(
                         children: [
-                          Text('Our team',
+                          Text('People',
                               style: TextStyle(color: Colors.black,fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 letterSpacing: 1,)),
