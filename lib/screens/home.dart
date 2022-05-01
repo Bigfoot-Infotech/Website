@@ -1,121 +1,46 @@
-import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+import 'package:bigfoot/screens/home_large.dart';
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import 'home_mobile.dart';
+
+class HomeScreen extends StatefulWidget {
 
   static String routeName = 'home';
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  Future<void> _makePhoneCall(String phoneNumber) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+    await launchUrl(launchUri);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    double _width = MediaQuery.of(context).size.width;
+
     return Scaffold(
+      floatingActionButton:Container(
+        margin: EdgeInsets.all(24),
+        child:  FloatingActionButton(
+            child: Icon(Icons.phone_in_talk_sharp,color: Colors.black,),
+          backgroundColor: Colors.white, onPressed: () { _makePhoneCall("9864396280"); },
+          
+      )) ,
       backgroundColor: Colors.black.withOpacity(0.9),
       body: SafeArea(
-        child: Container(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                margin: EdgeInsets.only(left: 24,top: 24,right: 24),
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('bigFoot',
-                      style: TextStyle(color: Colors.white,fontSize: 32,
-                          fontWeight: FontWeight.w200,
-                          letterSpacing: 1,
-                          fontFamily: 'Permanent'),),
-                    Card(
-                      child: Container(
-                        padding:EdgeInsets.all(12),
-                        child: IntrinsicHeight(
-                          child: Row(
-                          children: [
-                            Text('Our team',
-                          style: TextStyle(color: Colors.black,fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1,)),
-                            SizedBox(width: 8,),
-                            VerticalDivider(),
-                            SizedBox(width: 8,),
-                            Text('Projects',
-                                style: TextStyle(color: Colors.black,fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1,)),
-                            SizedBox(width: 8,),
-                            VerticalDivider(),
-                            SizedBox(width: 8,),
-                            Text('Podcast',
-                                style: TextStyle(color: Colors.black,fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1,))
-                          ],
-                    ),
-                        ),
-                      ),)
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text('Tools to keep your \n creativity moving',
-                        style: TextStyle(color: Colors.white,fontSize: 64,
-                            fontWeight: FontWeight.w200,
-                            fontFamily: 'Permanent'),),
-                      SizedBox(height: 16,),
-                      Text("Simplify your workflow so you can focus on what "
-                          "\n matters most—creating. Whether you’re initiating a startup or"
-                          " \n validating an idea. Let us to the dirty work. "
-                          "\n  Keep your creativity moving...",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white,fontSize: 27,
-                          letterSpacing: 0.5,
-                          fontWeight: FontWeight.w200,
-                        ),),
-                      SizedBox(height: 24,),
-                      Container(
-                        padding: EdgeInsets.only(left: 24, right: 24, top: 24),
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    // side: BorderSide(color: Colors.red)
-                                  )
-                              ),
-                              elevation: MaterialStateProperty.resolveWith((states) => 12.0),
-                              padding: MaterialStateProperty.resolveWith(
-                                      (state) => EdgeInsets.symmetric(horizontal: 24, vertical: 24)),
-                              backgroundColor: MaterialStateProperty.resolveWith(
-                                      (state) => Colors.white)),
-                          child: Text('Launching soon',
-                              style: TextStyle(fontSize: 16,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold
-                              )),
-
-                          onPressed: () {
-
-
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-
-            ],
-          ),
-        ),
+        child: _width>400
+            ?HomeLargeScreen()
+            :HomeMobileScreen(),
       ),
     );
   }
