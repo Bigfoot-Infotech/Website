@@ -1,3 +1,4 @@
+import 'package:bigfoot/screens/people.dart';
 import 'package:flutter/material.dart';
 
 
@@ -29,10 +30,15 @@ class HomeLargeScreen extends StatelessWidget {
                     child: IntrinsicHeight(
                       child: Row(
                         children: [
-                          Text('People',
-                              style: TextStyle(color: Colors.black,fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1,)),
+                          InkWell(
+                            onTap: (){
+                              Navigator.of(context).pushNamed(PeopleScreen.routeName);
+                            },
+                            child: Text('People',
+                                style: TextStyle(color: Colors.black,fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1,)),
+                          ),
                           SizedBox(width: 8,),
                           VerticalDivider(),
                           SizedBox(width: 8,),
@@ -69,7 +75,7 @@ class HomeLargeScreen extends StatelessWidget {
                   SizedBox(height: 16,),
                   Text("Simplify your workflow so you can focus on what "
                       "\n matters most—creating. Whether you’re initiating a startup or"
-                      " \n validating an idea. Let us to the dirty work. "
+                      " \n validating an idea. Let us do the dirty work. "
                       "\n  Keep your creativity moving...",
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.white,fontSize: 27,

@@ -77,7 +77,7 @@ class HomeMobileScreen extends StatelessWidget {
                   SizedBox(height: 16,),
                   Text("Simplify your workflow so you can focus on what "
                       "\n matters most—creating. Whether you’re initiating a startup or"
-                      " \n validating an idea. Let us to the dirty work. "
+                      " \n validating an idea. Let us do the dirty work. "
                       "\n  Keep your creativity moving...",
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.white,fontSize: 16,
