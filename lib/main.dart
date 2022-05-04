@@ -2,6 +2,7 @@
 
 import 'package:bigfoot/screens/home.dart';
 import 'package:bigfoot/screens/people.dart';
+import 'package:bigfoot/screens/projects.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -46,9 +47,8 @@ class _MyAppState extends State<MyApp> {
       home: HomeScreen(),
       routes: {
         HomeScreen.routeName: (ctx) => HomeScreen(),
-        PeopleScreen.routeName: (ctx) => PeopleScreen()
-
-
+        PeopleScreen.routeName: (ctx) => PeopleScreen(),
+        ProjectScreen.routeName: (ctx) => ProjectScreen()
       },
     );
   }

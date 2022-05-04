@@ -1,5 +1,7 @@
+import 'package:bigfoot/custom/custom_navbar.dart';
 import 'package:bigfoot/list/PeerGrid.dart';
 import 'package:bigfoot/list/PublicGrid.dart';
+import 'package:bigfoot/screens/home.dart';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
 
@@ -28,53 +30,7 @@ class _PeopleLargeScreenState extends State<PeopleLargeScreen> with TickerProvid
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            margin: EdgeInsets.only(left: 24,top: 24,right: 24),
-            width: double.infinity,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('bigFoot',
-                  style: TextStyle(color: Colors.white,fontSize: 32,
-                      fontWeight: FontWeight.w200,
-                      letterSpacing: 1,
-                      fontFamily: 'Permanent'),),
-                Card(
-                  child: Container(
-                    padding:EdgeInsets.all(12),
-                    child: IntrinsicHeight(
-                      child: Row(
-                        children: [
-                          InkWell(
-                            onTap: (){
-
-                            },
-                            child: Text('People',
-                                style: TextStyle(color: Colors.black,fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1,)),
-                          ),
-                          SizedBox(width: 8,),
-                          VerticalDivider(),
-                          SizedBox(width: 8,),
-                          Text('Projects',
-                              style: TextStyle(color: Colors.black,fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1,)),
-                          SizedBox(width: 8,),
-                          VerticalDivider(),
-                          SizedBox(width: 8,),
-                          Text('Podcast',
-                              style: TextStyle(color: Colors.black,fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1,))
-                        ],
-                      ),
-                    ),
-                  ),)
-              ],
-            ),
-          ),
+         CustomNavBar(),
           SizedBox(height: 32,),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12,vertical: 12),

@@ -1,4 +1,6 @@
+import 'package:bigfoot/custom/custom_navbar.dart';
 import 'package:bigfoot/screens/people.dart';
+import 'package:bigfoot/screens/projects.dart';
 import 'package:flutter/material.dart';
 
 
@@ -13,53 +15,7 @@ class HomeLargeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            margin: EdgeInsets.only(left: 24,top: 24,right: 24),
-            width: double.infinity,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('bigFoot',
-                  style: TextStyle(color: Colors.white,fontSize: 32,
-                      fontWeight: FontWeight.w200,
-                      letterSpacing: 1,
-                      fontFamily: 'Permanent'),),
-                Card(
-                  child: Container(
-                    padding:EdgeInsets.all(12),
-                    child: IntrinsicHeight(
-                      child: Row(
-                        children: [
-                          InkWell(
-                            onTap: (){
-                              Navigator.of(context).pushNamed(PeopleScreen.routeName);
-                            },
-                            child: Text('People',
-                                style: TextStyle(color: Colors.black,fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1,)),
-                          ),
-                          SizedBox(width: 8,),
-                          VerticalDivider(),
-                          SizedBox(width: 8,),
-                          Text('Projects',
-                              style: TextStyle(color: Colors.black,fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1,)),
-                          SizedBox(width: 8,),
-                          VerticalDivider(),
-                          SizedBox(width: 8,),
-                          Text('Podcast',
-                              style: TextStyle(color: Colors.black,fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1,))
-                        ],
-                      ),
-                    ),
-                  ),)
-              ],
-            ),
-          ),
+         CustomNavBar(),
           Expanded(
             child: Container(
               width: double.infinity,

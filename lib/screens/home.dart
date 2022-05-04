@@ -30,12 +30,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       floatingActionButton:Container(
-        margin: EdgeInsets.all(24),
-        child:  FloatingActionButton(
-            child: Icon(Icons.phone_in_talk_sharp,color: Colors.black,),
-          backgroundColor: Colors.white, onPressed: () { _makePhoneCall("9864396280"); },
-          
-      )) ,
+        margin: EdgeInsets.symmetric(horizontal: 24,vertical: 24),
+        width: double.infinity,
+        child:  Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 12),
+              child: FloatingActionButton(
+                  child: Icon(Icons.call,color: Colors.black,),
+                backgroundColor: Colors.white, onPressed: () { _makePhoneCall("9864396280"); },
+               ),
+            ),
+            FloatingActionButton(
+              child: Icon(Icons.chat_rounded,color: Colors.black,),
+              backgroundColor: Colors.white, onPressed: () { _makePhoneCall("9864396280"); },
+            ),
+          ],
+        )) ,
       backgroundColor: Colors.black.withOpacity(0.9),
       body: SafeArea(
         child: _width>400
