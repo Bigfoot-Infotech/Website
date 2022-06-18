@@ -54,7 +54,7 @@ class CustomNavBar extends StatelessWidget {
                     SizedBox(width: 8,),
                     VerticalDivider(),
                     SizedBox(width: 8,),
-                    Text('Podcast',
+                    Text('Programs',
                         style: TextStyle(color: Colors.black,fontSize: 12,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 1,))
