@@ -48,11 +48,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         )) ,
-      backgroundColor: Colors.black.withOpacity(0.9),
-      body: SafeArea(
-        child: _width>400
-            ?HomeLargeScreen()
-            :HomeMobileScreen(),
+      backgroundColor: Colors.black.withOpacity(0.8),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: _width>400
+              ?HomeLargeScreen()
+              :HomeMobileScreen(),
+        ),
       ),
     );
   }
