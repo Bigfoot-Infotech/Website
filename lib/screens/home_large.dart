@@ -91,6 +91,30 @@ class HomeLargeScreen extends StatelessWidget {
           Container(
               margin: EdgeInsets.symmetric(horizontal: 90),
               child: ServicesGrid()),
+
+                Container(
+                  width: double.infinity,
+                  child: Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Your time is limited,\n don't waste it living \nsomeone else's life.",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white,fontSize: 24,
+                                  fontWeight: FontWeight.w200,
+                                  letterSpacing: 1,
+                                  fontFamily: 'Permanent'),),
+                            Text("                              ___ Steve Jobs",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(color: Colors.white,fontSize: 14,
+                                  fontWeight: FontWeight.w200,
+                                  letterSpacing: 1,),)
+                          ],
+                        ),
+                  ),
+                ),
+          SizedBox(height: 32,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
