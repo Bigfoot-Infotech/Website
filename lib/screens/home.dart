@@ -49,13 +49,22 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         )) ,
       backgroundColor: Colors.black.withOpacity(0.8),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: _width>400
-              ?HomeLargeScreen()
-              :HomeMobileScreen(),
-        ),
-      ),
+      body: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) {
+      return [
+        // const SliverAppBar(
+        //   expandedHeight: 100,
+        //   title: Text(
+        //     'MySliverAppBar',
+        //   ),
+        // ),
+      ];
+    },
+    body: SafeArea(
+        child: _width>400
+            ?HomeLargeScreen()
+            :HomeMobileScreen(),
+      ))
     );
   }
 }

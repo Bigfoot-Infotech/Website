@@ -60,15 +60,15 @@ class ItemDestination extends StatelessWidget {
                       ),
                     ),
 
-                    Container(
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.only(left: 8),
-                      child: Text(
-                        _title,
-                        style: TextStyle(
-                            fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
-                      ),
-                    ),
+                    // Container(
+                    //   alignment: Alignment.center,
+                    //   margin: EdgeInsets.only(left: 8),
+                    //   child: Text(
+                    //     _title,
+                    //     style: TextStyle(
+                    //         fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
+                    //   ),
+                    // ),
 
 
                   ],

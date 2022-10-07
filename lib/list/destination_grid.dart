@@ -7,29 +7,29 @@ class ServicesGrid extends StatelessWidget {
   var _services = [
     {
       "name": "Graphics Design",
-      "image": "images/graphic.png",
+      "image": "images/gd.jpg",
        },
     {
       "name": "Social Media Marketing",
-      "image": "images/smm.png",
+      "image": "images/smm.jpg",
 
     },
     {
       "name": "Android App Development",
-      "image": "images/androiddev.webp",
+      "image": "images/aad.jpg",
 
     },
     {
       "name": "iOS App Development",
-      "image": "images/iosdev.png",
+      "image": "images/iosAppDev.jpg",
     },
     {
       "name": "Business Strategy Development",
-      "image": "images/strategydev.webp",
+      "image": "images/bsd.jpg",
     },
     {
       "name": "Website Development",
-      "image": "images/webdev.png",
+      "image": "images/wd.jpg",
     },
   ];
 
